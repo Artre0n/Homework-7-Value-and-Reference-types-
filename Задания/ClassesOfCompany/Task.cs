@@ -42,17 +42,15 @@ namespace Задания.ClassesOfCompany
         {
             if (employee != null)
             {
-                // Сотрудник может назначать задачи, если у него нет менеджера
-                // Либо если он может взять задачу по типу
                 if (employee.Manager == null || employee.CanTakeTask(TaskType))
                 {
                     Assignee = employee;
-                    string managerName = Assignee.Manager?.Name ?? "неизвестный"; // Используем безопасный доступ
+                    string managerName = Assignee.Manager?.Name ?? "неизвестный"; 
                     Console.WriteLine($"От {managerName} дается задача \"{Title}\" {employee.Name}. Задача принята");
                 }
                 else
                 {
-                    string managerName = Assignee?.Manager?.Name ?? "неизвестный"; // Используем безопасный доступ
+                    string managerName = Assignee?.Manager?.Name ?? "неизвестный"; 
                     Console.WriteLine($"От {managerName} дается задача \"{Title}\" {employee.Name}. Задача не может быть принята");
                 }
             }
