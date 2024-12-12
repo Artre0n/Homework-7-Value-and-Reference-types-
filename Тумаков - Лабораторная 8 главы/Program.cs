@@ -7,11 +7,11 @@ public class Programm
 {
     public static void Main()
     {
-        //Task1();
-        //Task2();
-        //Task3();
-        //Task4();
-        //Task5();
+        Task1();
+        Task2();
+        Task3();
+        Task4();
+        Task5();
         Task6();
     }
     public static void Task1()
