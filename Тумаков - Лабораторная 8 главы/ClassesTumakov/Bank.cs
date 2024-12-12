@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Тумаков___Лабораторная_8_главы.Classes
+namespace Тумаков___Лабораторная_8_главы.ClassesTumakov
 {
     public class BankAccount
     {

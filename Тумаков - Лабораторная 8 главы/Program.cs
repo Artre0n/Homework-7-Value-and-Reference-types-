@@ -1,5 +1,5 @@
 ﻿using Тумаков___Лабораторная_8_главы;
-using Тумаков___Лабораторная_8_главы.Classes;
+using Тумаков___Лабораторная_8_главы.ClassesTumakov;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
@@ -36,7 +36,7 @@ public class Programm
         account1.ShowAccountInfo();
         account2.ShowAccountInfo();
     }
-    
+
     public static string ReverseString(string input)
     {
         try
@@ -50,7 +50,7 @@ public class Programm
             Array.Reverse(charArray);
             return new string(charArray);
         }
-        catch(ArgumentNullException)
+        catch (ArgumentNullException)
         {
             return $"Входная строка не может быть null";
         }
@@ -91,7 +91,7 @@ public class Programm
                 return;
             }
         }
-        
+
         try
         {
             string text = File.ReadAllText(fileName);
@@ -126,9 +126,9 @@ public class Programm
 
         object obj1 = 123;
         object obj2 = "Hello";
-        object obj3 = 45.67; 
-        Console.WriteLine(CheckIfIFormattable(obj1)); 
-        Console.WriteLine(CheckIfIFormattable(obj2)); 
+        object obj3 = 45.67;
+        Console.WriteLine(CheckIfIFormattable(obj1));
+        Console.WriteLine(CheckIfIFormattable(obj2));
         Console.WriteLine(CheckIfIFormattable(obj3));
     }
     public static void SearchMail(ref string s)
@@ -154,7 +154,7 @@ public class Programm
         //Предусмотреть метод, выделяющий из строки адрес почты. Методу в
         //качестве параметра передается символьная строка s, e-mail возвращается в той же строке s:
 
-        string inputFilePath = "input.txt"; 
+        string inputFilePath = "input.txt";
         string outputFilePath = "output.txt";
 
         if (!File.Exists(inputFilePath))
@@ -167,11 +167,11 @@ public class Programm
         foreach (var line in File.ReadLines(inputFilePath))
         {
             string email = line;
-            SearchMail(ref email); 
+            SearchMail(ref email);
             if (!string.IsNullOrEmpty(email))
             {
-                emailFound = true; 
-        
+                emailFound = true;
+
                 using (StreamWriter writer = new StreamWriter(outputFilePath, true))
                 {
                     writer.WriteLine(email);
