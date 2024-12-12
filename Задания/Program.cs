@@ -5,7 +5,6 @@ public class Program
 {
     static void Main(string[] args)
     {
-        // Создание иерархии сотрудников
         GeneralDirector timur = new GeneralDirector("Тимур");
         FinancialDirector rashid = new FinancialDirector("Рашид", timur);
         DirectorOfAutomation ilham = new DirectorOfAutomation("Ильхам", timur);
