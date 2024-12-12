@@ -40,28 +40,25 @@ namespace Задания.ClassesOfCompany
         /// <param name="employee">Сотрудник, которому назначается задача</param>
         public void AssignTask(Employee employee)
         {
-            if (employee.CanTakeTask(TaskType))
+            if (employee != null)
             {
-                Assignee = employee;
-                if (Assignee.Manager != null)
+                // Сотрудник может назначать задачи, если у него нет менеджера
+                // Либо если он может взять задачу по типу
+                if (employee.Manager == null || employee.CanTakeTask(TaskType))
                 {
-                    Console.WriteLine($"От {Assignee.Manager.Name} дается задача \"{Title}\" {employee.Name}. Задача принята.");
+                    Assignee = employee;
+                    string managerName = Assignee.Manager?.Name ?? "неизвестный"; // Используем безопасный доступ
+                    Console.WriteLine($"От {managerName} дается задача \"{Title}\" {employee.Name}. Задача принята");
                 }
                 else
                 {
-                    Console.WriteLine($"От неизвестного дается задача \"{Title}\" {employee.Name}. Задача принята.");
+                    string managerName = Assignee?.Manager?.Name ?? "неизвестный"; // Используем безопасный доступ
+                    Console.WriteLine($"От {managerName} дается задача \"{Title}\" {employee.Name}. Задача не может быть принята");
                 }
             }
             else
             {
-                if (Assignee.Manager != null)
-                {
-                    Console.WriteLine($"От {Assignee.Manager.Name} дается задача \"{Title}\" {employee.Name}. Задача не может быть принята.");
-                }
-                else
-                {
-                    Console.WriteLine($"От неизвестного дается задача \"{Title}\" {employee.Name}. Задача не может быть принята.");
-                }
+                Console.WriteLine($"Задача \"{Title}\" не может быть назначена");
             }
         }
     }

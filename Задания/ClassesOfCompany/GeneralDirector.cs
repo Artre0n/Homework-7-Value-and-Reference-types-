@@ -16,7 +16,7 @@ namespace Задания.ClassesOfCompany
 
         public override bool CanTakeTask(string taskType)
         {
-            return true;
+            return false;
         }
     }
 }

@@ -40,14 +40,25 @@ namespace Задания.ClassesOfCompany
             Position = position;
             Manager = manager;
             Subordinates = new List<Employee>();
-            manager.Subordinates.Add(this);
+            if (manager != null)
+            {
+                if (manager.Subordinates == null)
+                {
+                    manager.Subordinates = new List<Employee>(); 
+                }
+                manager.Subordinates.Add(this); 
+            }
+            else
+            {
+                
+            }
         }
 
         /// <summary>
         /// Определяет, может ли сотрудник взять задачу определенного типа
         /// </summary>
         /// <param name="taskType">Тип задачи</param>
-        /// <returns>true, если сотрудник может взять задачу; иначе false.</returns>
+        /// <returns>true, если сотрудник может взять задачу; иначе false</returns>
         public abstract bool CanTakeTask(string taskType);
     }
 }

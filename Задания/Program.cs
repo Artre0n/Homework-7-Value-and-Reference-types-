@@ -38,7 +38,7 @@ public class Program
 
 
         task1.AssignTask(sergey);
-        task1.AssignTask(ilham); // Ильхам - директор, не разработчик
-        task1.AssignTask(rashid); // Рашид - финансовый директор, не системщик
+        task1.AssignTask(ilham); 
+        task1.AssignTask(rashid); 
     }
 }
